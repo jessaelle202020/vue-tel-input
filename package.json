@@ -1,18 +1,18 @@
 {
-  "name": "vue-tel-input",
+  "name": "vue-tel-input-traleado",
   "version": "5.6.2",
   "description": "International Telephone Input with Vue",
   "author": "Steven Dao <iamstevendao@gmail.com>",
   "license": "MIT",
-  "homepage": "https://iamstevendao.github.io/vue-tel-input/",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamstevendao/vue-tel-input.git"
+    "url": "https://github.com/jessaelle202020/vue-tel-input.git"
   },
   "scripts": {
     "serve": "cd docs && npm run serve",
     "build": "vue-cli-service build --target lib src/index.js --dest dist",
-    "build:modern": "MODERN=true vue-cli-service build --target lib src/index.js --dest dist-modern",
+    "build:modern": "vue-cli-service build --modern --target lib src/index.js --dest dist-modern",
     "docs:build": "cd docs && npm run build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
@@ -29,7 +29,8 @@
   "dependencies": {
     "core-js": "^3.14.0",
     "libphonenumber-js": "^1.9.6",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vuepress": "^1.8.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.8",

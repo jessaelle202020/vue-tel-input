@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import VueTelInput from './vue-tel-input.vue';
+import VueTelInput from './vue-tel-input-traleado.vue';
 import * as utils from '../utils';
 
 describe('vue-tel-input', () => {

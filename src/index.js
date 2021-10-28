@@ -1,5 +1,5 @@
 import utils, { defaultOptions } from './utils';
-import VueTelInput from './components/vue-tel-input.vue';
+import VueTelInputTraleado from './components/vue-tel-input-traleado.vue';
 
 export function install(Vue, customOptions = {}) {
   if (install.installed) return;
@@ -29,10 +29,10 @@ export function install(Vue, customOptions = {}) {
     ...otherCustomOptions,
   };
 
-  Vue.component('vue-tel-input', VueTelInput);
+  Vue.component('vue-tel-input-traleado', VueTelInputTraleado);
 }
 
-export { VueTelInput };
+export { VueTelInputTraleado };
 
 const plugin = {
   install,

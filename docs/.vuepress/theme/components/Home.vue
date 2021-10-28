@@ -1,5 +1,8 @@
 <template>
-  <main class="home" :aria-labelledby="data.heroText !== null ? 'main-title' : null">
+  <main
+    class="home"
+    :aria-labelledby="data.heroText !== null ? 'main-title' : null"
+  >
     <header class="hero">
       <img :src="$withBase('hero.png')" alt="vue-tel-input" />
       <h1>International Telephone Input with Vue</h1>
@@ -8,7 +11,8 @@
           ><img src="https://img.shields.io/npm/dt/vue-tel-input.svg" /></a
         >&nbsp;
         <a href="https://github.com/iamstevendao/vue-tel-input"
-          ><img src="https://img.shields.io/github/stars/iamstevendao/vue-tel-input.svg"
+          ><img
+            src="https://img.shields.io/github/stars/iamstevendao/vue-tel-input.svg"
         /></a>
       </div>
       <span style="color: #999999; font-size: 1.5rem">
@@ -53,7 +57,11 @@
 
     <div v-if="showOptions" class="options">
       <div class="form">
-        <div v-for="field in otherFields" :key="field.model" :class="field.containerClasses">
+        <div
+          v-for="field in otherFields"
+          :key="field.model"
+          :class="field.containerClasses"
+        >
           <form-input
             v-bind="field.bind"
             :model="options"
@@ -63,7 +71,11 @@
             :type="field.type"
           />
         </div>
-        <div v-for="field in dropdownFields" :key="field.model" :class="field.containerClasses">
+        <div
+          v-for="field in dropdownFields"
+          :key="field.model"
+          :class="field.containerClasses"
+        >
           <form-input
             v-bind="field.bind"
             :model="options.dropdownOptions"
@@ -90,30 +102,30 @@
 </template>
 
 <script>
-import FormInput from './FormInput.vue';
-import { allProps, defaultOptions } from '../../../../src/utils';
+import FormInput from "./FormInput.vue";
+import { allProps, defaultOptions } from "../../../../src/utils";
 
 function getFormConfig(field) {
-  if (field.type.name === 'Boolean') {
-    return { type: 'checkbox' };
+  if (field.type.name === "Boolean") {
+    return { type: "checkbox" };
   }
-  if (field.type.name === 'String') {
+  if (field.type.name === "String") {
     if (field.options?.length) {
-      return { type: 'radio', bind: { items: field.options } };
+      return { type: "radio", bind: { items: field.options } };
     }
-    return { type: 'input' };
+    return { type: "input" };
   }
 }
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { FormInput },
   data() {
     return {
-      phoneModel: '',
+      phoneModel: "",
       showOptions: false,
       phoneObject: {
-        formatted: '',
+        formatted: "",
         valid: false,
         country: undefined,
       },
@@ -137,15 +149,16 @@ export default {
     },
     dropdownFields() {
       return this.fields
-        .filter(({ model }) => model.includes('dropdownOptions'))
+        .filter(({ model }) => model.includes("dropdownOptions"))
         .map((field) => ({
           ...field,
-          model: field.model.split('.')[1],
+          model: field.model.split(".")[1],
         }));
     },
     otherFields() {
-      return this.fields
-        .filter(({ model }) => !model.includes('dropdownOptions'));
+      return this.fields.filter(
+        ({ model }) => !model.includes("dropdownOptions")
+      );
     },
   },
   methods: {
@@ -157,14 +170,14 @@ export default {
 </script>
 
 <style lang="stylus">
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
 .home {
   padding: $navbarHeight 2rem 0;
   max-width: $homePageWidth;
   margin: 0px auto;
   display: block;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: Oxygen;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

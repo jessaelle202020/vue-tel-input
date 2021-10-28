@@ -4,7 +4,7 @@
 
 # vue-tel-input
 
-International Telephone Input with Vue.
+International Telephone Input with Vue - Traleado.
 
 [![npm](https://img.shields.io/npm/dt/vue-tel-input.svg)](https://www.npmjs.com/package/vue-tel-input) [![stars](https://img.shields.io/github/stars/iamstevendao/vue-tel-input.svg)](https://github.com/iamstevendao/vue-tel-input)
 
