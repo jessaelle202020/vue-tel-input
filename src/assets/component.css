@@ -1,11 +1,4 @@
-* {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-
-  color: #A0A4A8;
-}
-.vue-tel-input {
+.vue-tel-input-traleado {
   height: 50px;
   background: #FFFFFF;
   border: 0.5px solid rgba(160, 164, 168, 0.5);
@@ -14,14 +7,20 @@
   display: flex;
   text-align: left;
 
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+
+  color: #A0A4A8;
+
   position: relative;
 }
-.vue-tel-input.disabled .selection,
-.vue-tel-input.disabled .dropdown,
-.vue-tel-input.disabled input {
+.vue-tel-input-traleado.disabled .selection,
+.vue-tel-input-traleado.disabled .dropdown,
+.vue-tel-input-traleado.disabled input {
   cursor: no-drop;
 }
-/* .vue-tel-input:focus-within {
+/* .vue-tel-input-traleado:focus-within {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   border-color: #66afe9;
 } */
@@ -33,7 +32,7 @@
   padding: 13px 20px;
   border-radius: 10px 0px 0px 10px;
   cursor: pointer;
-  width: 100px;
+  min-width: fit-content;
 
   position: relative;
 }
@@ -69,6 +68,7 @@
 .vti__country-code {
   /* color: #666; */
   margin-left: 20px;
+  font-size: 16px;
 }
 .vti__flag {
   margin-right: 5px;

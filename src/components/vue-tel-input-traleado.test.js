@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import VueTelInput from './vue-tel-input-traleado.vue';
+import VueTelInputTraleado from './vue-tel-input-traleado.vue';
 import * as utils from '../utils';
 
 describe('vue-tel-input', () => {
@@ -9,7 +9,7 @@ describe('vue-tel-input', () => {
   });
 
   it('renders without crash', () => {
-    const wrapper = shallowMount(VueTelInput);
+    const wrapper = shallowMount(VueTelInputTraleado);
 
     expect(wrapper.find('.vue-tel-input').exists()).toBeTruthy();
   });
@@ -23,7 +23,7 @@ describe('Props', () => {
 
   describe(':allCountries', () => {
     it('overrides all pre-defined countries', async () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           allCountries: [{ iso2: 'AU' }],
           autoDefaultCountry: false,
@@ -54,7 +54,7 @@ describe('Props', () => {
   // });
   describe(':defaultCountry', () => {
     it('shows correct default country', async () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           defaultCountry: 'AU',
         },
@@ -65,7 +65,7 @@ describe('Props', () => {
   });
   describe(':defaultCountryByDialCode', () => {
     it('shows correct default country by dial code', async () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           defaultCountry: 48,
         },
@@ -76,7 +76,7 @@ describe('Props', () => {
   });
   describe(':disabled', () => {
     it('adds disabled class to component', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           disabled: true,
         },
@@ -86,7 +86,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__input').attributes('disabled')).toBe('disabled');
     });
     it('stops showing dropdown list when true', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           disabled: true,
         },
@@ -99,7 +99,7 @@ describe('Props', () => {
   describe(':autoDefaultCountry', () => {
     it('doesn\'t fetch the country by IP when set FALSE', async () => {
       utils.getCountry.mockReset();
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           autoDefaultCountry: false,
           preferredCountries: ['AU'],
@@ -112,7 +112,7 @@ describe('Props', () => {
   });
   describe(':dropdownOptions', () => {
     it('.tabindex sets tabindex for dropdown', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           dropdownOptions: {
             tabindex: 1,
@@ -123,7 +123,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__dropdown').attributes('tabindex')).toBe('1');
     });
     it('.showDialCodeInList hides dial code in the dropdown', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           dropdownOptions: {
             showDialCodeInList: false,
@@ -134,7 +134,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__dropdown-item span').exists()).toBeFalsy();
     });
     it('.showDialCodeInSelection shows country code in the selection if TRUE', async () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           dropdownOptions: {
             showDialCodeInSelection: true,
@@ -146,7 +146,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__selection > .vti__country-code').text()).toBe('+61');
     });
     it('.showFlags hides flags in the dropdown list if FALSE', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           dropdownOptions: {
             showFlags: false,
@@ -159,7 +159,7 @@ describe('Props', () => {
   });
   describe(':ignoredCountries', () => {
     it('hides countries from the list', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           ignoredCountries: ['AU'],
         },
@@ -171,7 +171,7 @@ describe('Props', () => {
   });
   describe(':inputOptions', () => {
     it('.id sets `id` native attribute of input', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           inputOptions: { id: 'test' },
         },
@@ -180,7 +180,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__input').attributes('id')).toBe('test');
     });
     it('.maxlength sets `maxlength` native attribute of input', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           inputOptions: { maxlength: 20 },
         },
@@ -189,7 +189,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__input').attributes('maxlength')).toBe('20');
     });
     it('.name sets `name` native attribute of input', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           inputOptions: { name: 'test' },
         },
@@ -198,7 +198,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__input').attributes('name')).toBe('test');
     });
     it('.styleClasses sets classes along side with .vti__input', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           inputOptions: { styleClasses: ['test'] },
         },
@@ -207,7 +207,7 @@ describe('Props', () => {
       expect(wrapper.find('.vti__input').classes()).toContain('test');
     });
     // it('.dynamicPlaceholder generates a random number as placeholder', async () => {
-    //   const wrapper = shallowMount(VueTelInput, {
+    //   const wrapper = shallowMount(VueTelInputTraleado, {
     //     propsData: {
     //       inputOptions: { dynamicPlaceholder: true },
     //       defaultCountry: 'au',
@@ -227,7 +227,7 @@ describe('Props', () => {
   });
   describe(':onlyCountries', () => {
     it('limits the countries to be used', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           onlyCountries: ['AU'],
         },
@@ -244,7 +244,7 @@ describe('Props', () => {
   });
   describe(':preferredCountries', () => {
     it('are highlighted and be on top of the dropdown', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           preferredCountries: ['AU'],
         },
@@ -264,7 +264,7 @@ describe('Props', () => {
   });
   describe(':styleClasses', () => {
     it('sets classes along side with .vue-tel-input', () => {
-      const wrapper = shallowMount(VueTelInput, {
+      const wrapper = shallowMount(VueTelInputTraleado, {
         propsData: {
           styleClasses: ['test'],
         },

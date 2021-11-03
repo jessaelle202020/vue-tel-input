@@ -1,8 +1,8 @@
 {
   "name": "vue-tel-input-traleado",
-  "version": "5.6.2",
+  "version": "6.1.1",
   "description": "International Telephone Input with Vue",
-  "author": "Steven Dao <iamstevendao@gmail.com>",
+  "author": "Jess Elle",
   "license": "MIT",
   "homepage": "",
   "repository": {
@@ -23,9 +23,9 @@
     "dist/",
     "dist-modern/"
   ],
-  "main": "dist/vue-tel-input.umd.min.js",
-  "unpkg": "dist/vue-tel-input.umd.min.js",
-  "jsdelivr": "dist/vue-tel-input.umd.min.js",
+  "main": "dist/vue-tel-input-traleado.umd.min.js",
+  "unpkg": "dist/vue-tel-input-traleado.umd.min.js",
+  "jsdelivr": "dist/vue-tel-input-traleado.umd.min.js",
   "dependencies": {
     "core-js": "^3.14.0",
     "libphonenumber-js": "^1.9.6",

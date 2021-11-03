@@ -25,7 +25,11 @@
       </span>
 
       <div style="width: 500px; margin: 20px auto">
-        <vue-tel-input v-model="phoneModel" v-bind="options" @input="onInput" />
+        <vue-tel-input-traleado
+          v-model="phoneModel"
+          v-bind="options"
+          @input="onInput"
+        />
       </div>
       <div v-if="phoneObject.formatted" style="color: #e83e8c">
         <span>
@@ -104,6 +108,7 @@
 <script>
 import FormInput from "./FormInput.vue";
 import { allProps, defaultOptions } from "../../../../src/utils";
+import VueTelInputTraleado from "../../../../src/components/vue-tel-input-traleado.vue";
 
 function getFormConfig(field) {
   if (field.type.name === "Boolean") {
@@ -119,7 +124,7 @@ function getFormConfig(field) {
 
 export default {
   name: "Home",
-  components: { FormInput },
+  components: { FormInput, VueTelInputTraleado },
   data() {
     return {
       phoneModel: "",
